@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Obrazek</h1>
+    <img src="https://picsum.photos/300/300?random=1" alt="obrazek"></img>
+    <img src="https://picsum.photos/300/300?random=2" alt="obrazek"></img>
+    <img src="https://picsum.photos/300/300?random=3" alt="obrazek"></img>
+    <img src="https://picsum.photos/300/300?random=4" alt="obrazek"></img>
+    <img src="https://picsum.photos/300/300?random=5" alt="obrazek"></img>
+    <img src="https://picsum.photos/300/300?random=6" alt="obrazek"></img>
+    <br>
+    <div id="display"></div>
+    <script>
+        const pow = document.querySelectorAll("img");
+        const display = document.querySelector("#display");
+
+        function fn1(pow) {
+            const obr = document.createElement('img');
+            obr.src = pow.src;
+            obr.widht = 750;
+            obr.height = 500;
+            display.innerHTML = '';
+            display.appendChild(obr);
+        };
+        for (const pows of pow) {
+            pows.addEventListener("click", function () {
+                fn1(pows)
+            });
+        }
+    </script>
+</body>
+
+</html>
